@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="KNITlogo_png.png" alt="KNIT Logo" class="logo">
+            <div class="website-name">
+                <h1>Kamla Nehru Institute of Technology</h1>
+                <p>Digital Complaint Management System</p>
+            </div>
+        </div>
+        <button id="logoutBtn" onclick="logout()">Logout</button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#register-complaint">Register Complaint</a></li>
+            <li><a href="#track-complaint">Track Complaint</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>
+                Students can file various complaints through a single platform. It will be easier to track the progress 
+                of the complaints due to proper documentation and docket numbers.
+                The information and grievances received and resolved would provide insight for preparing future policies, 
+                guidelines, and regulations.
+            </p>
+        </section>
+        
+        <section id="register-complaint">
+            <h2>Register Your Complaint</h2>
+            <form id="complaintForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" name="roll" required>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="" selected disabled>Select Category</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="academics">Academics</option>
+                    <option value="administration">Administration</option>
+                </select>
+
+                <label for="complaint">Complaint:</label>
+                <textarea id="complaint" name="complaint" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="track-complaint">
+            <h2>Track Your Complaint</h2>
+            <form id="trackForm">
+                <label for="complaintId">Enter Complaint ID:</label>
+                <input type="text" id="complaintId" name="complaintId" required>
+                <button type="submit">Track</button>
+            </form>
+            <div id="status"></div>
+        </section>
+
+        <section>
+            <button id="complaints" onclick="viewComplaints()">View All Complaints</button>
+            <div id="complaintList"></div>
+        </section>
+
+        <section id="contact" style="margin-top: 40px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Contact Us</h2>
+            <div id="contactBox">
+                <p><strong>📞 Phone:</strong> +91-123-456-7890</p>
+                <p><strong>📧 Email:</strong> support@knit.com</p>
+                <p><strong>⏱️ Availability:</strong> 24x7 Support</p>
+            </div>
+        </section>
+        <br>
+        <br>
+        
+    </main>
+
+    <div id="response" style="display: none; color: green; margin-top: 20px;"></div>
+
+    <footer>
+        <p>&copy; 2024 Kamla Nehru Institute of Technology, Sultanpur(UP)</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="track.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
